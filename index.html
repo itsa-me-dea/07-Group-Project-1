@@ -5,74 +5,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Find Your Muse</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  
-
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link type="text/css" rel="stylesheet" href="./Assets/CSS/style.css"  media="screen,projection"/>
+    <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
+    <!-- our css -->
+<link rel="stylesheet" href="Assets/CSS/style.css">
+    
 </head>
 
 <body>
+  <header>
+    <div class="name">
+        <h1 style="text-align:center">&#127925; Find Your Muse &#127925;</h1>
+    </div>
+</header>
+    
+    <div class="row">
+        <div class="input-field col s5 offset-s1 m5 offset-m1">
+            <select>
+              <option value="" disabled selected>Select your genre</option>
+              <option value="1">Rock</option>
+              <option value="2">Pop</option>
+              <option value="3">Jazz</option>
+              <option value="4">Country</option>
+              <option value="5">Classical</option>
+              <option value="6">Dance</option>
+              <option value="7">Alternative</option>
+              <option value="9">Latin</option>
+              <option value="10">Suprise me!</option>
+            </select>
+            <label>Genre Select</label>
+          </div>
 
-<div class="box">
-   <div class=" one card-panel teal lighten-2 input-field col s12"> 
-        <select>
-            <option value="" disabled selected>Select Mood</option>
-            <option value="Sadness">Sadness</option>
-            <option value="Romantic">Romantic</option>
-            <option value="Anger">Anger</option>
-            <option value="Fear">Fear</option>
-            <option value="Gloomy">Gloomy</option>
-            <option value="Calm">Calm</option>
-            <option value="Playful">Playful</option>
+          <div class="input-field col s5 m5">
+            <select>
+              <option value="" disabled selected>Select your mood</option>
+              <option value="1">Romantic</option>
+              <option value="2">Anger</option>
+              <option value="3">Fear</option>
+              <option value="4">Gloomy</option>
+              <option value="5">Calm</option>
+              <option value="6">Playful</option>
+              <option value="7">Suprise me!</option>
+            </select>
+            <label>Mood Select</label>
+          </div>
 
-        </select>
-
-    </div> 
-    <div class="two, card-panel teal lighten-2, input-field col s12"> 
-        <select>
-            <option value="" disabled selected>Select Genre</option>
-            <option value="Sadness">Sadness</option>
-            <option value="Romantic">Romantic</option>
-            <option value="Anger">Anger</option>
-            <option value="Fear">Fear</option>
-            <option value="Gloomy">Gloomy</option>
-            <option value="Calm">Calm</option>
-            <option value="Playful">Playful</option>
-
-        </select>
-
-    </div> 
-
-</div>
-    <!-- <div class="input-field col s12 m6">
-        <select class="icons">
-          <option value="" disabled selected>Choose your option</option>
-          <option value="" data-icon="images/sample-1.jpg">example 1</option>
-          <option value="" data-icon="images/office.jpg">example 2</option>
-          <option value="" data-icon="images/yuna.jpg">example 3</option>
-        </select>
-        <label>Images in select</label>
-      </div>
-      <div class="input-field col s12 m6">
-        <select class="icons">
-          <option value="" disabled selected>Choose your option</option>
-          <option value="" data-icon="images/sample-1.jpg" class="left">example 1</option>
-          <option value="" data-icon="images/office.jpg" class="left">example 2</option>
-          <option value="" data-icon="images/yuna.jpg" class="left">example 3</option>
-        </select>
-        <label>Images in select</label>
-      </div>
-    -->
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script type="text/javascript" src="./Assets/JS/script.js"></script>
-
+    </div>
+    
 </body>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
+<script src="./Assets/JS/script.js"></script>
 </html>
+
