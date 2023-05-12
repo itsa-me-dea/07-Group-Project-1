@@ -1,0 +1,13 @@
+.box {
+    display: contents !important;
+    justify-content : center !important;
+  
+  }
+
+  .one {
+     flex: 4 !important;
+  }
+
+  .two {
+    flex: 1 !important;
+  }
