@@ -1,4 +1,4 @@
-var options = ['a', 'b', 'c', 'd'];
+var options = ['a', 'b', 'c'];
 
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('select');
