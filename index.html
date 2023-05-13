@@ -2,66 +2,68 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Find Your Muse</title>
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
-    <!-- our css -->
-<link rel="stylesheet" href="Assets/CSS/style.css">
-    
+  <title>Find Your Muse</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
+  <!-- our css -->
+  <link rel="stylesheet" href="Assets/CSS/style.css">
+
 </head>
 
 <body>
   <header>
     <div class="name">
-        <h1 style="text-align:center">&#127925; Find Your Muse &#127925;</h1>
+      <h1 style="text-align:center">&#127925; Find Your Muse &#127925;</h1>
     </div>
-</header>
-    <h1>unaMUSED</h1>
-    <div class="row">
+  </header>
+  <h1>unaMUSED</h1>
+  <div class="row">
         <div class="input-field col s5 offset-s1 m5 offset-m1">
-            <select>
+            <select id="drop-down">
               <option value="" disabled selected>Select your genre</option>
-              <option value="1">Rock</option>
-              <option value="2">Pop</option>
-              <option value="3">Jazz</option>
-              <option value="4">Country</option>
-              <option value="5">Classical</option>
-              <option value="6">Dance</option>
-              <option value="7">Alternative</option>
-              <option value="9">Latin</option>
-              <option value="10">Suprise me!</option>
+              <option value="Rock">Rock</option>
+              <option value="Pop">Pop</option>
+              <option value="Jazz">Jazz</option>
+              <option value="Country">Country</option>
+              <option value="Classical">Classical</option>
+              <option value="Dance">Dance</option>
+              <option value="Alternative">Alternative</option>
+              <option value="Latin">Latin</option>
+              <option value="Suprise-me">Suprise me!</option>
             </select>
             <label>Genre Select</label>
           </div>
 
-          <div class="input-field col s5 m5">
-            <select>
-              <option value="" disabled selected>Select your mood</option>
-              <option value="1">Romantic</option>
-              <option value="2">Anger</option>
-              <option value="3">Fear</option>
-              <option value="4">Gloomy</option>
-              <option value="5">Calm</option>
-              <option value="6">Playful</option>
-              <option value="7">Suprise me!</option>
-            </select>
-            <label>Mood Select</label>
-          </div>
 
-    </div>
-    
+  <div class="input-field col s5 m5">
+    <select id="drop-down2">
+      <option value="" disabled selected>Select your mood</option>
+      <option value="Romantic">Romantic</option>
+      <option value="Anger">Anger</option>
+      <option value="Fear">Fear</option>
+      <option value="Gloomy">Gloomy</option>
+      <option value="Calm">Calm</option>
+      <option value="Playful">Playful</option>
+      <option value="Surprise">Surprise me!</option>
+    </select>
+    <label>Mood Select</label>
+
+  </div>
+
+  <button id="search-button">Search</button>
+
 </body>
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 <script src="./Assets/JS/script.js"></script>
-</html>
 
+</html>
