@@ -1,6 +1,29 @@
 var options = ['Select your mood', 'Romantic', 'Anger', 'Fear', 'Gloomy', 'Calm', 'Playful', 'Surprise', 'Rock', 'Pop', 'Jazz', 'Country', 'Classical', 'Dance', 'Alternative', 'Latin', 'Suprise-me'];
 
 
+// id.videoId will create a search based on search querry
+
+// pass with the  key=API_KEY param
+//API_KEY = 'AIzaSyCUaBzS3x1TRvHowScmBseZ4yHIbkxfB9s'
+
+// var url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&topicID=/m/05z1_&type=video&key=AIzaSyCUaBzS3x1TRvHowScmBseZ4yHIbkxfB9s';
+// console.log(url);
+var searchButton = document.getElementById('search');
+
+// when we click the search button the searchWeather function will be activated
+searchButton.addEventListener('click', searchTopic);
+
+function searchTopic() {
+
+var mood = document.getElementById('drop-down2').children;
+
+  var url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&topicID=/m/05z1_&type=video&key=AIzaSyCUaBzS3x1TRvHowScmBseZ4yHIbkxfB9s';
+  console.log(url);
+
+  window.open(searchTopic);
+}
+
+
 document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('select');
   var instances = M.FormSelect.init(elems, options);
@@ -95,3 +118,7 @@ window.open('https://www.google.com/search?q=' + encodeURIComponent(moodQuery));
 }
 });
 });
+
+
+
+
