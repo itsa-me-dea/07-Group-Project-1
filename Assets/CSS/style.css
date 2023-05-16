@@ -1,3 +1,10 @@
 .name {
     background-color: pink;
 }
+
+.row{
+    background-color: skyblue;
+    color: white !important; 
+}
+
+.input-field col s5 offset-s1 m5 offset-m1
