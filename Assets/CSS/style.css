@@ -2,6 +2,24 @@
     background-color: pink;
 }
 
+.row{
+    /* background-color: skyblue; */
+    color: white !important; 
+}
+
+#search-button {
+    border-radius: 4px;
+    border: medium solid #000000;
+    background-color:rgb(92, 250, 246);
+    font-family: "Arial", Impact, Charcoal, sans-serif;
+    font-weight: bold;
+    font-size:20px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px black;
+    padding: 5px 30px;
+    margin:8px 70px;
+}
+
 /* updated header to spand the top of the page */
 header {
     background-color: pink;

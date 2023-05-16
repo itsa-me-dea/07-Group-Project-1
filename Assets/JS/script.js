@@ -1,101 +1,110 @@
 var options = ['Select your mood', 'Romantic', 'Anger', 'Fear', 'Gloomy', 'Calm', 'Playful', 'Surprise', 'Rock', 'Pop', 'Jazz', 'Country', 'Classical', 'Dance', 'Alternative', 'Latin', 'Suprise-me'];
-
+var genreQuery
+var moodQuery
 
 document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('select');
   var instances = M.FormSelect.init(elems, options);
 });
 // added below code so everything on the page loads before the search tries being preformed
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+});
   // targets the drop-down ID
 var select = document.querySelector('#drop-down');
 
+var genreQuery =""
+var moodQuery =""
+
 // listening for 
-select.addEventListener('change', function () {
+select.addEventListener ('change', function () {
 
   var selectedValue = select.value;
   console.log(selectedValue);
 
-  var searchQuery = '';
+  
   switch (selectedValue) {
     case 'Rock':
-      searchQuery = 'Rock songs';
+      genreQuery = 'Rock';
       break;
     case 'Pop':
-      searchQuery = 'songs about pop';
+      genreQuery = 'Pop';
       break;
     case 'Jazz':
-      searchQuery = 'songs about jazz';
+      genreQuery = 'Jazz';
       break;
     case 'Country':
-      searchQuery = ' country songs';
+      genreQuery = 'Country';
       break;
     case 'Classical':
-      searchQuery = 'classical songs';
+      genreQuery = 'Classical';
       break;
     case 'Dance':
-      searchQuery = ' dance songs';
+      genreQuery = 'Dance';
       break;
     case 'Alternative':
-      searchQuery = 'Alternative songs';
+      genreQuery = 'Alternative';
       break;
     case 'Latin':
-      searchQuery = 'Latin songs';
+      genreQuery = 'Latin';
       break;
     case 'Suprise-me':
-      searchQuery = 'Random song genre';
+      genreQuery = 'Random genre';
       break;
 
   }
-  console.log(searchQuery);
+  console.log(genreQuery);
 
-  if (searchQuery !== '') {
-    window.open('https://www.google.com/search?q=' + encodeURIComponent(searchQuery));
-  }
+
 });
 
 var mood = document.querySelector('#drop-down2');
-
 
 mood.addEventListener('change', function () {
 
   var moodValue = mood.value;
   console.log(moodValue);
 
-  var moodQuery = '';
+  
   switch (moodValue) {
 
 case 'Romantic':
-  moodQuery = 'Romantic songs';
+  moodQuery = 'Romantic';
   break;
 case 'Anger':
-  moodQuery = 'Angry songs';
+  moodQuery = 'Angry';
   break;
 case 'Fear':
-  moodQuery = 'Scary songs';
+  moodQuery = 'Scary';
   break;
 case 'Gloomy':
-  moodQuery = 'Gloomy songs';
+  moodQuery = 'Gloomy';
   break;
 case 'Calm':
-  moodQuery = 'Calm songs';
+  moodQuery = 'Calm';
   break;
 case 'Playful':
-  moodQuery = 'Playful songs';
+  moodQuery = 'Playful';
   break;
 case 'Suprise':
-  moodQuery = 'Random songs';
+  moodQuery = 'Random';
   break;
 
 }
 console.log(moodQuery);
 
-if (moodQuery !== '') {
-window.open('https://www.google.com/search?q=' + encodeURIComponent(moodQuery));
-}
-});
+//if (moodQuery !== '') {
+//window.open('https://www.google.com/search?q=' + encodeURIComponent(moodQuery));
+//}
 });
 
+var search_button = document.querySelector('#search-button');
+
+// listening for 
+search_button.addEventListener ('click', function () {
+  window.open('https://www.google.com/search?q=' + encodeURIComponent(genreQuery+ " and " + moodQuery + " music")); 
+  console.log(genreQuery,moodQuery)
+});
+  
 // spotify API: Request an access token
 // curl -X POST "https://accounts.spotify.com/api/token" \
 //      -H "Content-Type: application/x-www-form-urlencoded" \
@@ -325,9 +334,10 @@ const APPController = (function(UICtrl, APICtrl) {
       //get the token that's stored on the page
       const token = UICtrl.getStoredToken().token;        
       // get the genre select field
-      const genreSelect = UICtrl.inputField().genre;       
+      // const genreSelect = UICtrl.inputField().genre;       
       // get the genre id associated with the selected genre
-      const genreId = genreSelect.options[genreSelect.selectedIndex].value;             
+      // const genreId = genreSelect.options[genreSelect.selectedIndex].value;
+      const genreId = genreQuery;             
       // ge the playlist based on a genre
       const playlist = await APICtrl.getPlaylistByGenre(token, genreId);       
       // create a playlist list item for every playlist returned
