@@ -1,22 +1,27 @@
 var options = ['Select your mood', 'Romantic', 'Anger', 'Fear', 'Gloomy', 'Calm', 'Playful', 'Surprise', 'Rock', 'Pop', 'Jazz', 'Country', 'Classical', 'Dance', 'Alternative', 'Latin', 'Suprise-me'];
-
+var genrequary
+var moodQuery
 
 document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('select');
   var instances = M.FormSelect.init(elems, options);
 });
 // added below code so everything on the page loads before the search tries being preformed
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+});
   // targets the drop-down ID
 var select = document.querySelector('#drop-down');
 
+var searchQuery =""
+var moodQuery =""
+
 // listening for 
-select.addEventListener('change', function () {
+select.addEventListener ('change', function () {
 
   var selectedValue = select.value;
   console.log(selectedValue);
 
-  var searchQuery = '';
+  
   switch (selectedValue) {
     case 'Rock':
       searchQuery = 'Rock songs';
@@ -49,9 +54,8 @@ select.addEventListener('change', function () {
   }
   console.log(searchQuery);
 
-  if (searchQuery !== '') {
-    window.open('https://www.google.com/search?q=' + encodeURIComponent(searchQuery));
-  }
+
+
 });
 
 var mood = document.querySelector('#drop-down2');
@@ -62,7 +66,7 @@ mood.addEventListener('change', function () {
   var moodValue = mood.value;
   console.log(moodValue);
 
-  var moodQuery = '';
+  
   switch (moodValue) {
 
 case 'Romantic':
@@ -90,8 +94,16 @@ case 'Suprise':
 }
 console.log(moodQuery);
 
-if (moodQuery !== '') {
-window.open('https://www.google.com/search?q=' + encodeURIComponent(moodQuery));
-}
+//if (moodQuery !== '') {
+//window.open('https://www.google.com/search?q=' + encodeURIComponent(moodQuery));
+//}
 });
+
+var search_button = document.querySelector('#search-button');
+
+// listening for 
+search_button.addEventListener ('click', function () {
+  window.open('https://www.google.com/search?q=' + encodeURIComponent(searchQuery+""+moodQuery)); 
+  console.log(searchQuery,moodQuery)
 });
+  

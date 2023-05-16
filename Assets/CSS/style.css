@@ -7,4 +7,15 @@
     color: white !important; 
 }
 
-.input-field col s5 offset-s1 m5 offset-m1
+#search-button {
+    border-radius: 4px;
+    border: medium solid #000000;
+    background-color:rgb(92, 250, 246);
+    font-family: "Arial", Impact, Charcoal, sans-serif;
+    font-weight: bold;
+    font-size:20px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px black;
+    padding: 5px 30px;
+    margin:8px 70px;
+}
