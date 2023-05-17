@@ -32,14 +32,14 @@
     <div class="input-field col s5 offset-s1 m5 offset-m1 #bbdefb blue lighten-4">
         <select id="drop-down">
           <option value="" disabled selected>Select your genre</option>
-          <option value="Rock">Rock</option>
-          <option value="Pop">Pop</option>
-          <option value="Jazz">Jazz</option>
-          <option value="Country">Country</option>
-          <option value="Classical">Classical</option>
-          <option value="Dance">Dance</option>
-          <option value="Alternative">Alternative</option>
-          <option value="Latin">Latin</option>
+          <option value="0JQ5DAqbMKFDXXwE9BDJAr">Rock</option> 
+          <option value="0JQ5DAqbMKFEC4WFtoNRpw">Pop</option>
+          <option value="0JQ5DAqbMKFAJ5xb0fwo9m">Jazz</option>
+          <option value="0JQ5DAqbMKFKLfwjuJMoNC">Country</option>
+          <option value="0JQ5DAqbMKFPrEiAOxgac3">Classical</option>
+          <option value="0JQ5DAqbMKFHOzuVTgTizF">Dance</option>
+          <option value="0JQ5DAqbMKFFtlLYUHv8bT">Alternative</option>
+          <option value="0JQ5DAqbMKFxXaXKP7zcDp">Latin</option>
           <option value="Suprise-me">Suprise me!</option>
         </select>
         <label>Genre Select</label>
@@ -49,11 +49,11 @@
     <div class="input-field col s5 m5 #a7ffeb teal accent-1">
       <select id="drop-down2">
         <option value="" disabled selected>Select your mood</option>
-        <option value="Romantic">Romantic</option>
+        <option value="0JQ5DAqbMKFE3sM1v6ZTFO">Romantic</option>
         <option value="Anger">Anger</option>
         <option value="Fear">Fear</option>
-        <option value="Gloomy">Gloomy</option>
-        <option value="Calm">Calm</option>
+        <option value="0JQ5DAqbMKFGTIdqXPDTSL">Gloomy</option>
+        <option value="0JQ5IMCbQBLhoq1KyoiHEM">Calm</option>
         <option value="Playful">Playful</option>
         <option value="Surprise">Surprise me!</option>
       </select>
@@ -63,14 +63,32 @@
 </div>  
 
 <div class="center-align">
+
+  <div class='row hide'>
+    <!-- <label for='Genre' class='form-label col-sm-2'>Playlists:</label>
+    <select name='' id='select_playlist' class='form-control form-control-sm col-sm-10'>
+        <option>Select...</option>                    
+    </select> -->
+  
+    <div class="input-field col s6 offset-s1 m6 offset-m3 yellow">
+      <select name='' id='select_playlist'>
+        <option value="" disabled selected>Select a playlist</option>
+        <option>Select...</option>                    
+      </select>
+      <label>Playlist Select</label>
+    </div>
+  </div>
+</div>
+
+<div class="center-align">
   <button id="search-button">Search</button>
 </div>
 
 <div class='row'>
   <div class='col s5 offset-s1 m5 offset-m1'>
-      <div class='list-group song-list'>
+      <ol class='list-group song-list'>
           
-      </div>                                             
+      </o>                                             
   </div>
   <div class='offset-md-1 col-sm-4' id='song-detail'>                
   </div>

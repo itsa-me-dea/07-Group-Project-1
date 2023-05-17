@@ -100,32 +100,11 @@ console.log(moodQuery);
 var search_button = document.querySelector('#search-button');
 
 // listening for 
-search_button.addEventListener ('click', function () {
-  window.open('https://www.google.com/search?q=' + encodeURIComponent(genreQuery+ " and " + moodQuery + " music")); 
-  console.log(genreQuery,moodQuery)
-});
+// search_button.addEventListener ('click', function () {
+//   window.open('https://www.google.com/search?q=' + encodeURIComponent(genreQuery+ " and " + moodQuery + " music")); 
+//   console.log(genreQuery,moodQuery)
+// });
   
-// spotify API: Request an access token
-// curl -X POST "https://accounts.spotify.com/api/token" \
-//      -H "Content-Type: application/x-www-form-urlencoded" \
-//      -d "grant_type=client_credentials&client_id=11af7816bf434f9bba3da85a2dcecd11&client_secret=c8b15d0bed084b69bbb5e30bda880c7a"
-
-// const clientId = '11af7816bf434f9bba3da85a2dcecd11';
-// const clientSecret = 'c8b15d0bed084b69bbb5e30bda880c7a';
-
-// const result = fetch('https://accounts.spotify.com/api/token', {
-//   method: 'POST',
-//   headers: {
-//       'Content-Type' : 'application/x-www-form-urlencoded', 
-//       'Authorization' : 'Basic ' + btoa( clientId + ':' + clientSecret)
-//   },
-//   body: 'grant_type=client_credentials'
-// }); 
-
-// const data = result.json();
-// console.log(data.access_token);
-// return data.access_token;
-
 // spotify API: adapted from https://github.com/sammy007-debug/How-to-use-Spotify-s-API-with-Javascript
 const APIController = (function() {
     
@@ -169,7 +148,12 @@ const APIController = (function() {
       });
 
       const data = await result.json();
+      console.log(result);
       return data.playlists.items;
+      // then(function (data) {
+      //   console.log(data);
+      // });
+
   }
 
   const _getTracks = async (token, tracksEndPoint) => {
@@ -227,6 +211,13 @@ const UIController = (function() {
       divSongDetail: '#song-detail',
       hfToken: '#hidden_token',
       divSonglist: '.song-list'
+
+      // selectGenre: '#select_genre',
+      // selectPlaylist: '#select_playlist',
+      // buttonSubmit: '#btn_submit',
+      // divSongDetail: '#song-detail',
+      // hfToken: '#hidden_token',
+      // divSonglist: '.song-list'
   }
 
   //public methods
@@ -334,10 +325,10 @@ const APPController = (function(UICtrl, APICtrl) {
       //get the token that's stored on the page
       const token = UICtrl.getStoredToken().token;        
       // get the genre select field
-      // const genreSelect = UICtrl.inputField().genre;       
+      const genreSelect = UICtrl.inputField().genre;       
       // get the genre id associated with the selected genre
-      // const genreId = genreSelect.options[genreSelect.selectedIndex].value;
-      const genreId = genreQuery;             
+      const genreId = genreSelect.options[genreSelect.selectedIndex].value;
+      // const genreId = genreQuery;             
       // ge the playlist based on a genre
       const playlist = await APICtrl.getPlaylistByGenre(token, genreId);       
       // create a playlist list item for every playlist returned
