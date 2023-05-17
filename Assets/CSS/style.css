@@ -3,7 +3,9 @@
 }
 
 .row{
+
     background-color: skyblue;
+  
     color: white !important; 
 }
 
@@ -18,4 +20,13 @@
     text-shadow: 2px 2px 4px black;
     padding: 5px 30px;
     margin:8px 70px;
+
 }
+
+/* updated header to spand the top of the page */
+header {
+    background-color: pink;
+    padding: 10px 0px 10px 0px;
+    margin-bottom: 15px;
+}
+
