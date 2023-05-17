@@ -392,13 +392,13 @@ const APPController = (function(UICtrl, APICtrl) {
 // will need to call a method to load the genres on page load
 APPController.init();
 
-});
+// });
 
-var search_button = document.querySelector('#search-button');
+// var search_button = document.querySelector('#search-button');
 
-// listening for 
-search_button.addEventListener ('click', function () {
-  window.open('https://www.google.com/search?q=' + encodeURIComponent(searchQuery+""+moodQuery)); 
-  console.log(searchQuery,moodQuery)
-});
+// // listening for 
+// search_button.addEventListener ('click', function () {
+//   window.open('https://www.google.com/search?q=' + encodeURIComponent(searchQuery+""+moodQuery)); 
+//   console.log(searchQuery,moodQuery)
+// });
 
