@@ -1,5 +1,9 @@
 var options = ['Select your mood', 'Romantic', 'Anger', 'Fear', 'Gloomy', 'Calm', 'Playful', 'Surprise', 'Rock', 'Pop', 'Jazz', 'Country', 'Classical', 'Dance', 'Alternative', 'Latin', 'Suprise-me'];
+
 var genreQuery
+
+var genrequary
+
 var moodQuery
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -12,7 +16,11 @@ document.addEventListener('DOMContentLoaded', function () {
   // targets the drop-down ID
 var select = document.querySelector('#drop-down');
 
+
 var genreQuery =""
+
+var searchQuery =""
+
 var moodQuery =""
 
 // listening for 
@@ -55,6 +63,7 @@ select.addEventListener ('change', function () {
   console.log(genreQuery);
 
 
+
 });
 
 var mood = document.querySelector('#drop-down2');
@@ -95,6 +104,7 @@ console.log(moodQuery);
 //if (moodQuery !== '') {
 //window.open('https://www.google.com/search?q=' + encodeURIComponent(moodQuery));
 //}
+
 });
 
 var search_button = document.querySelector('#search-button');
@@ -381,3 +391,14 @@ const APPController = (function(UICtrl, APICtrl) {
 
 // will need to call a method to load the genres on page load
 APPController.init();
+
+});
+
+var search_button = document.querySelector('#search-button');
+
+// listening for 
+search_button.addEventListener ('click', function () {
+  window.open('https://www.google.com/search?q=' + encodeURIComponent(searchQuery+""+moodQuery)); 
+  console.log(searchQuery,moodQuery)
+});
+
