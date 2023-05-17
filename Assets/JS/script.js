@@ -134,20 +134,22 @@ const APIController = (function() {
       });
 
       const data = await result.json();
+      console.log('getToken: ' + data)
       return data.access_token;
   }
   
-  // // grab genre list from spotify to apply to list (not implemented)
-  // const _getGenres = async (token) => {
+  // grab genre list from spotify to apply to list (not implemented)
+  const _getGenres = async (token) => {
 
-  //     const result = await fetch(`https://api.spotify.com/v1/browse/categories?locale=sv_US`, {
-  //         method: 'GET',
-  //         headers: { 'Authorization' : 'Bearer ' + token}
-  //     });
+      const result = await fetch(`https://api.spotify.com/v1/browse/categories?locale=sv_US`, {
+          method: 'GET',
+          headers: { 'Authorization' : 'Bearer ' + token}
+      });
 
-  //     const data = await result.json();
-  //     return data.categories.items;
-  // }
+      const data = await result.json();
+      console.log('getGenre: ' + data)
+      return data.categories.items;
+  }
 
   // apply selected genre (mood not working) to call list from spotify API
   const _getPlaylistByGenre = async (token, genreId) => {
@@ -160,7 +162,7 @@ const APIController = (function() {
       });
 
       const data = await result.json();
-      console.log(result);
+      console.log('getPlaylistByGenre: ' + data)
       return data.playlists.items;
       // then(function (data) {
       //   console.log(data);
@@ -178,6 +180,7 @@ const APIController = (function() {
       });
 
       const data = await result.json();
+      console.log('getTracks: ' + data)
       return data.items;
   }
 
@@ -189,6 +192,7 @@ const APIController = (function() {
       });
 
       const data = await result.json();
+      console.log('getTrack: ' + data)
       return data;
   }
 
@@ -264,7 +268,7 @@ const UIController = (function() {
       },
 
       // need method to create the song detail
-      createTrackDetail(img, title, artist, url) {
+      createTrackDetail(img, title, artist, spotify) {
 
           const detailDiv = document.querySelector(DOMElements.divSongDetail);
           // any time user clicks a new song, we need to clear out the song detail div
@@ -284,7 +288,7 @@ const UIController = (function() {
                 <label for="artist" class="form-label col-sm-12">Artist: ${artist}</label>
               </div>
               <div class="card-action">
-                <a href="${url}">Link</a> 
+                <a href="${spotify}">Link</a> 
               </div>
             </div>
           </div>
@@ -387,7 +391,9 @@ const APPController = (function(UICtrl, APICtrl) {
       //get the track object
       const track = await APICtrl.getTrack(token, trackEndpoint);
       // load the track details
-      UICtrl.createTrackDetail(track.album.images[2].url, track.name, track.artists[0].name);
+      UICtrl.createTrackDetail(track.album.images[2].url, track.name, track.artists[0].name, track.external_urls.spotify);
+
+      console.log("UICtrl: " + UICtrl.stringify);
   });    
 
   return {
