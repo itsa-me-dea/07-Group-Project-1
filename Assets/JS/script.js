@@ -288,7 +288,8 @@ const UIController = (function() {
                 <label for="artist" class="form-label col-sm-12">Artist: ${artist}</label>
               </div>
               <div class="card-action">
-                <a href="${spotify}">Link</a> 
+                <a href="${spotify}"><i class="fa-brands fa-spotify fa-2xl" style="color: #1DB954;"></i></a> 
+                <a href="${spotify}"><i class="fa-brands fa-youtube fa-2xl" style="color: #FF0000;"></i></a>
               </div>
             </div>
           </div>
