@@ -117,11 +117,11 @@ var search_button = document.querySelector('#search-button');
   
 // spotify API: adapted from https://github.com/sammy007-debug/How-to-use-Spotify-s-API-with-Javascript
 const APIController = (function() {
-    
+  // pulled from spotify dashboard upon app registration
   const clientId = '11af7816bf434f9bba3da85a2dcecd11';
   const clientSecret = 'c8b15d0bed084b69bbb5e30bda880c7a';
   
-  // private methods
+  // get the spotify API token
   const _getToken = async () => {
 
       const result = await fetch('https://accounts.spotify.com/api/token', {
@@ -134,9 +134,11 @@ const APIController = (function() {
       });
 
       const data = await result.json();
+      console.log('getToken: ' + data)
       return data.access_token;
   }
   
+  // grab genre list from spotify to apply to list (not implemented)
   const _getGenres = async (token) => {
 
       const result = await fetch(`https://api.spotify.com/v1/browse/categories?locale=sv_US`, {
@@ -145,9 +147,11 @@ const APIController = (function() {
       });
 
       const data = await result.json();
+      console.log('getGenre: ' + data)
       return data.categories.items;
   }
 
+  // apply selected genre (mood not working) to call list from spotify API
   const _getPlaylistByGenre = async (token, genreId) => {
 
       const limit = 5;
@@ -158,7 +162,7 @@ const APIController = (function() {
       });
 
       const data = await result.json();
-      console.log(result);
+      console.log('getPlaylistByGenre: ' + data)
       return data.playlists.items;
       // then(function (data) {
       //   console.log(data);
@@ -176,6 +180,7 @@ const APIController = (function() {
       });
 
       const data = await result.json();
+      console.log('getTracks: ' + data)
       return data.items;
   }
 
@@ -187,6 +192,7 @@ const APIController = (function() {
       });
 
       const data = await result.json();
+      console.log('getTrack: ' + data)
       return data;
   }
 
@@ -257,12 +263,12 @@ const UIController = (function() {
 
       // need method to create a track list group item 
       createTrack(id, name) {
-          const html = `<a href="#" class="list-group-item list-group-item-action list-group-item-light" id="${id}">${name}</a>`;
+          const html = `<a href="#!" class="collection-item" id="${id}">${name}</a>`;
           document.querySelector(DOMElements.divSonglist).insertAdjacentHTML('beforeend', html);
       },
 
       // need method to create the song detail
-      createTrackDetail(img, title, artist) {
+      createTrackDetail(img, title, artist, spotify) {
 
           const detailDiv = document.querySelector(DOMElements.divSongDetail);
           // any time user clicks a new song, we need to clear out the song detail div
@@ -270,16 +276,25 @@ const UIController = (function() {
 
           const html = 
           `
-          <div class="row col-sm-12 px-0">
-              <img src="${img}" alt="">        
+          <div class="row">
+          <div class="col s3 offset-s1 m3 offset-m1">
+            <div class="card">
+              <div class="card-image">
+              <img src="${img}" alt="">
+              </div>
+              <div class="card-content">
+                <label for="Genre" class="form-label col-sm-12">Title: ${title}</label>
+                <br>
+                <label for="artist" class="form-label col-sm-12">Artist: ${artist}</label>
+              </div>
+              <div class="card-action">
+                <a href="${spotify}"><i class="fa-brands fa-spotify fa-2xl" style="color: #1DB954;"></i></a> 
+                <a href="${spotify}"><i class="fa-brands fa-youtube fa-2xl" style="color: #FF0000;"></i></a>
+              </div>
+            </div>
           </div>
-          <div class="row col-sm-12 px-0">
-              <label for="Genre" class="form-label col-sm-12">${title}:</label>
-          </div>
-          <div class="row col-sm-12 px-0">
-              <label for="artist" class="form-label col-sm-12">By ${artist}:</label>
-          </div> 
-          `;
+        </div>
+      `;
 
           detailDiv.insertAdjacentHTML('beforeend', html)
       },
@@ -377,7 +392,9 @@ const APPController = (function(UICtrl, APICtrl) {
       //get the track object
       const track = await APICtrl.getTrack(token, trackEndpoint);
       // load the track details
-      UICtrl.createTrackDetail(track.album.images[2].url, track.name, track.artists[0].name);
+      UICtrl.createTrackDetail(track.album.images[2].url, track.name, track.artists[0].name, track.external_urls.spotify);
+
+      console.log("UICtrl: " + UICtrl.stringify);
   });    
 
   return {

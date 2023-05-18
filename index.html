@@ -13,6 +13,12 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
   <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
+  <!-- fontawesome -->
+  <script src="https://kit.fontawesome.com/a23205ab6e.js" crossorigin="anonymous"></script>
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- our css -->
   <link rel="stylesheet" href="Assets/CSS/style.css">
 
@@ -21,7 +27,7 @@
 <body>
   <header>
     <div class="name">
-      <h1 style="text-align:center">&#127925; Find Your Muse &#127925;</h1>
+      <h1 style="text-align:center"><i class="fa-solid fa-music" style="color: #f2e7b0;"></i> Find Your Muse <i class="fa-solid fa-music" style="color: #f2e7b0;"></i></h1>
     </div>
 
       
@@ -34,7 +40,7 @@
   <div class="row">
     
     <!-- genre selection -->
-    <div class="input-field col s5 offset-s1 m5 offset-m1 #bbdefb blue lighten-4">
+    <div class="input-field col s5 offset-s1 m5 offset-m1" id="genre-select">
         <select id="drop-down">
           <option value="" disabled selected>Select your genre</option>
           <option value="0JQ5DAqbMKFDXXwE9BDJAr">Rock</option> 
@@ -52,7 +58,7 @@
 
 
     <!-- mood selection -->
-    <div class="input-field col s5 m5 #a7ffeb teal accent-1">
+    <div class="input-field col s5 m5" id="mood-select">
       <select id="drop-down2">
         <option value="" disabled selected>Select your mood</option>
         <option value="0JQ5DAqbMKFE3sM1v6ZTFO">Romantic</option>
@@ -78,7 +84,7 @@
         <option>Select...</option>                    
     </select> -->
   
-    <div class="input-field col s6 offset-s1 m6 offset-m3 yellow">
+    <div class="input-field col s6 offset-s1 m6 offset-m3">
       <select name='' id='select_playlist'>
         <option value="" disabled selected>Select a playlist</option>
         <option>Select...</option>                    
@@ -94,10 +100,10 @@
 </div>
 
 <div class='row'>
-  <div class='col s5 offset-s1 m5 offset-m1'>
-      <ol class='list-group song-list'>
+  <div class='col s5 offset-s1 m5 offset-m1 list-group song-list collection'>
+      <!-- <ol class='list-group song-list collection'>
           
-      </o>                                             
+      </o>                                              -->
   </div>
   <div class='offset-md-1 col-sm-4' id='song-detail'>                
   </div>
