@@ -11,8 +11,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Import materialize.css-->
-  <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
   <!-- fontawesome -->
   <script src="https://kit.fontawesome.com/a23205ab6e.js" crossorigin="anonymous"></script>
   <!-- google font -->
@@ -27,17 +25,14 @@
 <body>
   <header>
     <div class="name">
-      <h1 style="text-align:center"><i class="fa-solid fa-music" style="color: #f2e7b0;"></i> Find Your Muse <i class="fa-solid fa-music" style="color: #f2e7b0;"></i></h1>
+      <h1 style="text-align:center"><i class="fa-solid fa-music" style="color: purple;"></i> Find Your Muse <i class="fa-solid fa-music" style="color: purple;"></i></h1>
     </div>
 
       
        
 
   </header>
-
-  <!-- <h1>unaMUSED</h1> -->
   <input type='hidden' id='hidden_token'>
-  <div class="row">
     
     <!-- genre selection -->
     <div class="input-field col s5 offset-s1 m5 offset-m1" id="genre-select">
@@ -51,26 +46,25 @@
           <option value="0JQ5DAqbMKFHOzuVTgTizF">Dance</option>
           <option value="0JQ5DAqbMKFFtlLYUHv8bT">Alternative</option>
           <option value="0JQ5DAqbMKFxXaXKP7zcDp">Latin</option>
-          <option value="Suprise-me">Suprise me!</option>
+
         </select>
-        <label>Genre Select</label>
+        <label style="color: aliceblue;">Genre Select</label>
       </div>
 
 
     <!-- mood selection -->
-    <div class="input-field col s5 m5" id="mood-select">
-      <select id="drop-down2">
+    <!-- <div class="input-field col s5 m5" id="mood-select">
+      <select id="mood-dropdown">
         <option value="" disabled selected>Select your mood</option>
-        <option value="0JQ5DAqbMKFE3sM1v6ZTFO">Romantic</option>
+        <option value="Romantic">Romantic</option>
         <option value="Anger">Anger</option>
         <option value="Fear">Fear</option>
-        <option value="0JQ5DAqbMKFGTIdqXPDTSL">Gloomy</option>
-        <option value="0JQ5IMCbQBLhoq1KyoiHEM">Calm</option>
+        <option value="Gloomy">Gloomy</option>
+        <option value="Calm">Calm</option>
         <option value="Playful">Playful</option>
-        <option value="Surprise">Surprise me!</option>
       </select>
       <label>Mood Select</label>
-    </div>
+    </div> -->
 
 </div>  
 
@@ -79,10 +73,7 @@
 
 
   <div class='row hide'>
-    <!-- <label for='Genre' class='form-label col-sm-2'>Playlists:</label>
-    <select name='' id='select_playlist' class='form-control form-control-sm col-sm-10'>
-        <option>Select...</option>                    
-    </select> -->
+
   
     <div class="input-field col s6 offset-s1 m6 offset-m3">
       <select name='' id='select_playlist'>
@@ -98,7 +89,7 @@
 <div class="center-align">
   <button id="search-button">Search</button>
 </div>
-
+<div id="card-container" class="card-container"></div>
 <div class='row'>
   <div class='col s5 offset-s1 m5 offset-m1 list-group song-list collection'>
       <!-- <ol class='list-group song-list collection'>
