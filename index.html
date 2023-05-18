@@ -13,6 +13,12 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
   <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
+  <!-- fontawesome -->
+  <script src="https://kit.fontawesome.com/a23205ab6e.js" crossorigin="anonymous"></script>
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- our css -->
   <link rel="stylesheet" href="Assets/CSS/style.css">
 
@@ -21,56 +27,95 @@
 <body>
   <header>
     <div class="name">
-      <h1 style="text-align:center">&#127925; Find Your Muse &#127925;</h1>
+      <h1 style="text-align:center"><i class="fa-solid fa-music" style="color: #f2e7b0;"></i> Find Your Muse <i class="fa-solid fa-music" style="color: #f2e7b0;"></i></h1>
     </div>
 
       
        
 
   </header>
-  <h1>unaMUSED</h1>
-   <div class="row white">
-        <div class="input-field col s5 offset-s1 m5 offset-m1 #bbdefb blue lighten-4">
-            <select id="drop-down">
 
-              <option value="" disabled selected>Select your genre</option>
-              <option value="Rock">Rock</option>
-              <option value="Pop">Pop</option>
-              <option value="Jazz">Jazz</option>
-              <option value="Country">Country</option>
-              <option value="Classical">Classical</option>
-              <option value="Dance">Dance</option>
-              <option value="Alternative">Alternative</option>
-              <option value="Latin">Latin</option>
-              <option value="Suprise-me">Suprise me!</option>
-            </select>
-            <label>Genre Select</label>
-          </div>
+  <!-- <h1>unaMUSED</h1> -->
+  <input type='hidden' id='hidden_token'>
+  <div class="row">
+    
+    <!-- genre selection -->
+    <div class="input-field col s5 offset-s1 m5 offset-m1" id="genre-select">
+        <select id="drop-down">
+          <option value="" disabled selected>Select your genre</option>
+          <option value="0JQ5DAqbMKFDXXwE9BDJAr">Rock</option> 
+          <option value="0JQ5DAqbMKFEC4WFtoNRpw">Pop</option>
+          <option value="0JQ5DAqbMKFAJ5xb0fwo9m">Jazz</option>
+          <option value="0JQ5DAqbMKFKLfwjuJMoNC">Country</option>
+          <option value="0JQ5DAqbMKFPrEiAOxgac3">Classical</option>
+          <option value="0JQ5DAqbMKFHOzuVTgTizF">Dance</option>
+          <option value="0JQ5DAqbMKFFtlLYUHv8bT">Alternative</option>
+          <option value="0JQ5DAqbMKFxXaXKP7zcDp">Latin</option>
+          <option value="Suprise-me">Suprise me!</option>
+        </select>
+        <label>Genre Select</label>
+      </div>
 
 
-  <div class="input-field col s5 m5 #a7ffeb teal accent-1">
-    <select id="drop-down2">
-      <option value="" disabled selected>Select your mood</option>
-      <option value="Romantic">Romantic</option>
-      <option value="Anger">Anger</option>
-      <option value="Fear">Fear</option>
-      <option value="Gloomy">Gloomy</option>
-      <option value="Calm">Calm</option>
-      <option value="Playful">Playful</option>
-      <option value="Surprise">Surprise me!</option>
-    </select>
-    <label>Mood Select</label>
+    <!-- mood selection -->
+    <div class="input-field col s5 m5" id="mood-select">
+      <select id="drop-down2">
+        <option value="" disabled selected>Select your mood</option>
+        <option value="0JQ5DAqbMKFE3sM1v6ZTFO">Romantic</option>
+        <option value="Anger">Anger</option>
+        <option value="Fear">Fear</option>
+        <option value="0JQ5DAqbMKFGTIdqXPDTSL">Gloomy</option>
+        <option value="0JQ5IMCbQBLhoq1KyoiHEM">Calm</option>
+        <option value="Playful">Playful</option>
+        <option value="Surprise">Surprise me!</option>
+      </select>
+      <label>Mood Select</label>
+    </div>
 
+</div>  
+
+
+<div class="center-align">
+
+
+  <div class='row hide'>
+    <!-- <label for='Genre' class='form-label col-sm-2'>Playlists:</label>
+    <select name='' id='select_playlist' class='form-control form-control-sm col-sm-10'>
+        <option>Select...</option>                    
+    </select> -->
+  
+    <div class="input-field col s6 offset-s1 m6 offset-m3">
+      <select name='' id='select_playlist'>
+        <option value="" disabled selected>Select a playlist</option>
+        <option>Select...</option>                    
+      </select>
+      <label>Playlist Select</label>
+    </div>
+  </div>
+</div>
+
+
+<div class="center-align">
+  <button id="search-button">Search</button>
+</div>
+
+<div class='row'>
+  <div class='col s5 offset-s1 m5 offset-m1 list-group song-list collection'>
+      <!-- <ol class='list-group song-list collection'>
+          
+      </o>                                              -->
+  </div>
+  <div class='offset-md-1 col-sm-4' id='song-detail'>                
   </div>
 
-  <button id="search">Search</button>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
-
-
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
+  <!-- vanilla js -->
+  <script src="./Assets/JS/script.js"></script>
 </body>
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="https://apis.google.com/js/api.js"></script>
-<script src="./Assets/JS/script.js"></script>
 
 </html>

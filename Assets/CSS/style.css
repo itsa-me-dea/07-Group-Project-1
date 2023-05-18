@@ -1,10 +1,49 @@
 .name {
-    background-color: pink;
+    /* background-color: pink; */
+    font-family: 'Comfortaa', cursive;
+    color: white;
 }
 
 .row{
-    background-color: skyblue;
+
+    /* background-color: skyblue; */
+  
     color: white !important; 
 }
 
-.input-field col s5 offset-s1 m5 offset-m1
+#search-button {
+    border-radius: 4px;
+    /* border: medium solid #000000; */
+    background-color:#073763;
+    font-family: "Arial", Impact, Charcoal, sans-serif;
+    font-weight: bold;
+    font-size:20px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px black;
+    padding: 5px 30px;
+    margin:8px 70px;
+
+}
+
+#search-button:hover {
+    opacity: 0.7;
+}
+
+/* updated header to spand the top of the page */
+header {
+    background-color: #073763;
+    padding: 10px 0px 10px 0px;
+    margin-bottom: 15px;
+}
+
+.input-field {
+    background-color: #f2e7b0 !important;
+}
+
+#genre-select {
+    margin-right: 3px !important;
+}
+
+#mood-select {
+    margin-left: 3px !important;
+}
