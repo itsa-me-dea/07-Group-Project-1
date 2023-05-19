@@ -1,77 +1,70 @@
+* {
+    font-family: 'Comfortaa', cursive, "Arial", Impact, Charcoal, sans-serif;
+}
+
+/* header/title styles */
+header {
+    background-color: #073763;
+    padding: 10px 0px 10px 0px;
+    margin-bottom: 15px;
+}
+
 .name {
-    /* background-color: pink; */
-    font-family: 'procima nova', cursive;
-    color: black;
-    font-style: bolder;
+    color: white;
+    font-style: 700;
 }
 
-.row {
-
-    /* background-color: skyblue; */
-
-    color: white !important;
+h1 {
+    text-shadow: 8px 8px 5px rgb(65, 15, 65);
 }
 
+/* search button */
 #search-button {
     border-radius: 4px;
-    /* border: medium solid #000000; */
-    background-color: #f2e7b0;
-    font-family: "Arial", Impact, Charcoal, sans-serif;
+    background-color: #073763;
     font-weight: bold;
     font-size: 20px;
-    color: black;
-    text-shadow: 2px 2px 4px purple;
+    color: white;
     padding: 5px 30px;
-    margin: 8px 70px;
-
+    margin-bottom: 40px;
+    font-family: 'Comfortaa', cursive, "Arial", Impact, Charcoal, sans-serif;
 }
 
 #search-button:hover {
     opacity: 0.7;
 }
 
-/* updated header to spand the top of the page */
-header {
-    background-color: wheat;
-    padding: 10px 0px 10px 0px;
-    margin-bottom: 15px;
-    margin: 10%;
-}
-
+/* genre select field */
 .input-field {
     background-color: #f2e7b0 !important;
     margin: 5%;
+    box-shadow: 8px 8px 5px rgb(65, 15, 65);
+}
+.select-dropdown {
+    font-family: 'Comfortaa', cursive, "Arial", Impact, Charcoal, sans-serif !important;
 }
 
 #genre-select {
-    margin-right: 3px !important;
-
+    padding-left: 10px;
 }
 
-#mood-select {
-    margin-left: 3px !important;
-}
-
-body {
-    background-color: #073763;
-
-}
-
+/* genre options */
 span {
     color: black !important;
-    text-shadow: 2px 2px 4px purple;
+    text-shadow: 2px 2px 4px rgb(65, 15, 65);
 }
 
 a {
     color: black !important;
-
 }
 
+/* text in card */
 label {
     color: white !important;
-    text-shadow: 2px 2px 4px purple;
 }
 
-h1 {
+/* label for genre select */
+.genre-label {
+    color: black !important;
     text-shadow: 2px 2px 4px purple;
 }

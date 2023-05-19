@@ -58,12 +58,9 @@ var APIController = (function() {
       var data = await result.json();
       console.log('getPlaylistByGenre: ' + data)
       return data.playlists.items;
-      // then(function (data) {
-      //   console.log(data);
-      // });
-
   }
 
+  // grab list of tracks
   var _getTracks = async (token, tracksEndPoint) => {
 
       var limit = 5;
@@ -78,6 +75,7 @@ var APIController = (function() {
       return data.items;
   }
 
+  // grabs info from track selected from provided list
   var _getTrack = async (token, trackEndPoint) => {
 
       var result = await fetch(`${trackEndPoint}`, {
@@ -110,7 +108,7 @@ var APIController = (function() {
 })();
 
 
-// UI Module
+// UI Module --> DOM manipulation
 var UIController = (function() {
 
   //object to hold references to html selectors
@@ -138,24 +136,25 @@ var UIController = (function() {
           }
       },
 
-      // need methods to create select list option
+      // used to create a select 
       createGenre(text, value) {
           var html = `<option value="${value}">${text}</option>`;
           document.querySelector(DOMElements.selectGenre).insertAdjacentHTML('beforeend', html);
       }, 
 
+      // creates a seclection of playlists (not displayed on the html since the list wasnt showing correctly)
       createPlaylist(text, value) {
           var html = `<option value="${value}">${text}</option>`;
           document.querySelector(DOMElements.selectPlaylist).insertAdjacentHTML('beforeend', html);
       },
 
-      // need method to create a track list group item 
+      // method to create tracks
       createTrack(id, name) {
           var html = `<a href="#!" class="collection-item" id="${id}">${name}</a>`;
           document.querySelector(DOMElements.divSonglist).insertAdjacentHTML('beforeend', html);
       },
 
-      // need method to create the song detail
+      // method to create song info card for selected song
       createTrackDetail(img, title, artist, spotify) {
         var detailDiv = document.querySelector(DOMElements.divSongDetail);
         detailDiv.innerHTML = '';
@@ -167,7 +166,7 @@ var UIController = (function() {
                 <div class="card-image">
                   <img src="${img}" alt="">
                 </div>
-                <div style="background-color: black; class="card-content">
+                <div style="background-color: purple;" class="card-content">
                   <label for="Genre" class="form-label col-sm-12">Title: ${title}</label>
                   <br>
                   <label for="artist" class="form-label col-sm-12">Artist: ${artist}</label>
@@ -190,7 +189,6 @@ var UIController = (function() {
               var cardActionDiv = document.querySelector('.card-action');
               var youtubeLink = document.createElement('a');
               youtubeLink.href = youtubeUrl;
-              youtubeLink.className = 'card-action';
               youtubeLink.target = '_blank';
               var youtubeIcon = document.createElement('i');
               youtubeIcon.className = 'fa-brands fa-youtube fa-2xl';
@@ -203,12 +201,9 @@ var UIController = (function() {
           .catch((error) => {
             console.error('YouTube API error:', error);
           });
-      
-      
-      
-    
       },
 
+      // reset when a new genre is selected
       resetTrackDetail() {
           this.inputField().songDetail.innerHTML = '';
       },

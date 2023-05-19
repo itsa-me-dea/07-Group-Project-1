@@ -20,9 +20,11 @@ https://itsa-me-dea.github.io/FindYourMuse/
 GitHub
 https://github.com/itsa-me-dea/FindYourMuse 
 
-![alt text](Assets/images/Project-step1.JPG)
-![alt text](Assets/images/Project-step2.JPG)
-![alt text](Assets/images/Project-step3.JPG)
+![Gif of working site](Assets/images/screen-capture.gif)
+
+**NOTE:** Due to limited YouTube API calls, the YouTube link is not available in the gif above, so the impage below shows what it looks like when the API is available.
+
+![Image of final landing](Assets/images/Final-shot.png)
 
 ## Setup
 N/A

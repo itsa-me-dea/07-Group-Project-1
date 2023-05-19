@@ -23,15 +23,14 @@
 </head>
 
 <body>
+  <!-- title -->
   <header>
     <div class="name">
       <h1 style="text-align:center"><i class="fa-solid fa-music" style="color: purple;"></i> Find Your Muse <i class="fa-solid fa-music" style="color: purple;"></i></h1>
     </div>
-
-      
-       
-
   </header>
+
+  <!-- Spotify API token -->
   <input type='hidden' id='hidden_token'>
     
     <!-- genre selection -->
@@ -48,7 +47,7 @@
           <option value="0JQ5DAqbMKFxXaXKP7zcDp">Latin</option>
 
         </select>
-        <label style="color: aliceblue;">Genre Select</label>
+        <label class="genre-label">Genre Select</label>
       </div>
 
 
@@ -68,13 +67,9 @@
 
 </div>  
 
-
+<!-- where list of playlists would go -->
 <div class="center-align">
-
-
   <div class='row hide'>
-
-  
     <div class="input-field col s6 offset-s1 m6 offset-m3">
       <select name='' id='select_playlist'>
         <option value="" disabled selected>Select a playlist</option>
@@ -85,19 +80,21 @@
   </div>
 </div>
 
-
+<!-- search button -->
 <div class="center-align">
   <button id="search-button">Search</button>
 </div>
+
+<!-- placement for list of songs called -->
 <div id="card-container" class="card-container"></div>
 <div class='row'>
+  <!-- where the songs are listed -->
   <div class='col s5 offset-s1 m5 offset-m1 list-group song-list collection'>
-      <!-- <ol class='list-group song-list collection'>
-          
-      </o>                                              -->
+     
   </div>
-  <div class='offset-md-1 col-sm-4' id='song-detail'>                
-  </div>
+  <!-- where the song info is added -->
+  <div class='offset-md-1 col-sm-4' id='song-detail'></div>
+</div>
 
   <!-- jquery -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
