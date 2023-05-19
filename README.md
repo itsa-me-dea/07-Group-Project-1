@@ -22,7 +22,7 @@ https://github.com/itsa-me-dea/FindYourMuse
 
 ![Gif of working site](Assets/images/screen-capture.gif)
 
-**NOTE:** Due to limited YouTube API calls, the YouTube link is not available in the gif above, so the impage below shows what it looks like when the API is available.
+**NOTE:** Due to limited YouTube API calls, the YouTube link is not available in the gif above, so the image below shows what it looks like when the API is available.
 
 ![Image of final landing](Assets/images/Final-shot.png)
 
@@ -51,3 +51,7 @@ To do:
 #### TristanM225 Github https://github.com/TristanM225 
 #### ggulmom Github https://github.com/ggulmom
 
+## Sources
+- Abduraimov , Muminjon. “How to Extract Song Data from the Spotify Api?” Apilayer Blog - Everything about APIs, 8 Sept. 2022, blog.apilayer.com/how-to-extract-song-data-from-the-spotify-api/#:~:text=Spotify%20stores%20data%20on%20its,data%20using%20the%20Spotify%20API. 
+
+- Youtube, Google. “Implementation: Search Requests&nbsp; |&nbsp; YouTube Data API&nbsp; |&nbsp; Google for Developers.” Google, developers.google.com/youtube/v3/guides/implementation/search. Accessed 18 May 2023. 

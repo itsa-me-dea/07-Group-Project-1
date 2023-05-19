@@ -316,11 +316,14 @@ APPController.init();
 
 
 // Search YouTube based on track title and artist
+// async is a keyword that allows a function to return a promise
+//The following code takes the title and artist values from the spotify results and adds them to the youtube api link
 var searchYouTube = async (title, artist) => {
   var apiKey = 'AIzaSyCUaBzS3x1TRvHowScmBseZ4yHIbkxfB9s';
   var query = `${title} ${artist}`;
   var apiUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=1&q=${encodeURIComponent(query)}&key=${apiKey}`;
 
+  // await unwraps promises by passing promise as the expression
   var response = await fetch(apiUrl);
   var data = await response.json();
 
